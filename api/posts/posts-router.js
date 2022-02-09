@@ -91,30 +91,6 @@ router.delete('/:id', async (req, res)=>{
 // TEST: http put :9000/api/posts/1
 router.put('/:id', async (req, res)=>{
     // res.json({message: "TEST: put /api/posts/:id !"})
-    // Post.findById(req.params.id)
-    //     .then( findPost=>{
-    //         if(!findPost){
-    //             res.status(404).json({message: "The post with the specified ID does not exist" })
-    //         }else if(!req.body.title || !req.body.contents){
-    //             res.status(400).json({message: "Please provide title and contents for the post" })
-    //         }else{
-    //             Post.update(req.params.id, req.body)
-    //                 .then( post =>{
-    //                     Post.findById(post.id)
-    //                         .then( newPost => {
-    //                             res.status(200).json(newPost)
-    //                         })
-    //                 })
-    //                 .catch(err=>{
-    //                     res.status(500).json({
-    //                         message: "The posts information could not be retrieved",
-    //                         err: err.message,
-    //                         stack: err.message
-    //                     }) 
-    //                 })
-    //         }
-    //     })
-    //     .catch()
     try{
        const findPost =await Post.findById(req.params.id)
        if(!findPost){
